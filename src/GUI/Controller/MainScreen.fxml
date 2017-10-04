@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.MainScreenController">
+   <children>
+      <Button fx:id="encodeButton" layoutX="252.0" layoutY="438.0" mnemonicParsing="false" onAction="#encodePicture" prefHeight="24.0" prefWidth="82.0" text="Encode" />
+      <Button fx:id="decodeButton" layoutX="386.0" layoutY="438.0" mnemonicParsing="false" onAction="#decodePicture" prefHeight="26.0" prefWidth="82.0" text="Decode" />
+      <ImageView fx:id="pictureView" fitHeight="179.0" fitWidth="322.0" layoutX="369.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="imageButton" layoutX="211.0" layoutY="102.0" mnemonicParsing="false" onAction="#setImage" text="Choose image" />
+      <TextArea fx:id="textArea" layoutX="28.0" layoutY="205.0" prefHeight="200.0" prefWidth="664.0" />
+      <Label layoutX="28.0" layoutY="184.0" text="Enter your secret message below ;)" />
+      <Button fx:id="clearButton" layoutX="610.0" layoutY="438.0" mnemonicParsing="false" onAction="#clear" prefHeight="26.0" prefWidth="82.0" text="Clear" />
+      <Label layoutX="30.0" layoutY="71.0" text="Current image:" />
+      <Label fx:id="fileLabel" layoutX="134.0" layoutY="72.0" prefHeight="16.0" prefWidth="224.0" />
+   </children>
+</AnchorPane>
