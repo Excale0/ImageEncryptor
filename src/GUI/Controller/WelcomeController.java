@@ -29,7 +29,7 @@ public class WelcomeController {
     private Label failureLabel;
 
 
-    private static final String PASSWORD = "Genifer";
+    private static final String PASSWORD = "123";
 
     @FXML
     void initialize(){
@@ -45,16 +45,16 @@ public class WelcomeController {
             Sceneloader loader = Sceneloader.getInstance();
             String FXML = "GUI/Controller/MainScreen.fxml";
             loader.loadScene(FXML,(Node)e.getSource(),720,480 );
-            File audioFile = new File("audio/ceroc.mp3");
-            Media ha = new Media(audioFile.toURI().toString());
-            player = new MediaPlayer(ha);
+            //File audioFile = new File("audio/ceroc.mp3");
+            //Media ha = new Media(audioFile.toURI().toString());
+            //player = new MediaPlayer(ha);
         } else {
             failureLabel.setVisible(true);
-            File audioFile = new File("audio/ha.mp3");
-            Media ceroc = new Media(audioFile.toURI().toString());
-            player = new MediaPlayer(ceroc);
+            //File audioFile = new File("audio/ha.mp3");
+            //Media ceroc = new Media(audioFile.toURI().toString());
+            //player = new MediaPlayer(ceroc);
         }
-        player.play();
+//        player.play();
      }
 
     void bindPasswordFieldToEnter(){
