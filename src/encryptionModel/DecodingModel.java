@@ -9,8 +9,6 @@ public class DecodingModel extends EncryptionModel {
     
     private static DecodingModel instance;
 
-
-    
     @Override
     protected void putInKeymap(int number, char c) {
         decryptionModel.put(Character.toString(c),number);

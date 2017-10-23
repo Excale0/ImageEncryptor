@@ -38,8 +38,6 @@ public class MainScreenController {
 
     private BufferedImage outputImage;
 
-    private Image picture;
-
     private String fileName;
 
     @FXML
@@ -73,6 +71,7 @@ public class MainScreenController {
         clear();
         FileChooser chooser = new FileChooser();
         File file = chooser.showOpenDialog((Stage)((Node)e.getSource()).getScene().getWindow());
+
         try {
             fileName = file.getName().replaceFirst("[.][^.]+$", "");
             fileLabel.setText(fileName);
@@ -82,8 +81,9 @@ public class MainScreenController {
             encodeButton.setDisable(false);
             decodeButton.setDisable(false);
             pictureView.setImage(new Image(url));
+
         } catch (Exception E){
-            System.out.println("Error");
+            System.out.println(E.getStackTrace());
         }
     }
 

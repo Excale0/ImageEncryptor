@@ -9,6 +9,14 @@ import java.awt.image.BufferedImage;
  * Created by Raymond Wang on 29/09/17.
  */
 public class RGB_IO {
+
+    /**
+     * Returns the values of the RGB pixel modulo 4 for each pixel in a string format.
+     * @param pic
+     * @param x
+     * @param y
+     * @return
+     */
     public static int getIntFromRGB(BufferedImage pic, int x, int y){
         int rgb = pic.getRGB(x,y);
         int red =   (rgb >> 16) & 0xFF;
@@ -25,6 +33,7 @@ public class RGB_IO {
     }
 
     public static void setRGBFromInt(BufferedImage pic, int value, int x, int y){
+
         int rgb = pic.getRGB(x,y);
         int red =   (rgb >> 16) & 0xFF;
         int green = (rgb >>  8) & 0xFF;
@@ -49,10 +58,12 @@ public class RGB_IO {
 
     public static int alterRGB(int difference, int colorIndex){
         if (difference<0){
+
             if (colorIndex + difference <0){
                 difference = 4+difference;
             }
             colorIndex = colorIndex+difference;
+
         } else {
 
             if (colorIndex + difference <= 255) {
