@@ -40,6 +40,11 @@ public abstract class EncryptionModel {
         return (number / 100);
     }
 
+    /**
+     * Resolves overflow for quaternary counting
+     * @param number the number
+     * @return a quaternary number.
+     */
     public static int resolveOverflow(int number) {
         int ones = getOnes(number);
         int tens = getTens(number);
@@ -76,8 +81,12 @@ public abstract class EncryptionModel {
         return encryptionModel.get(key);
     }
 
-    public int getRGBNumber(String c){
-        return decryptionModel.get(c);
+    public int getRGBNumber(String c) throws Exception{
+        try {
+            return decryptionModel.get(c);
+        } catch (Exception e) {
+            throw new Exception();
+        }
     }
 
     public int incrementAndPutNumber(int number, char c) {

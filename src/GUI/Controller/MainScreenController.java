@@ -41,7 +41,7 @@ public class MainScreenController {
     private String fileName;
 
     @FXML
-    private Button encodeButton, decodeButton,imageButton;
+    private Button encodeButton, decodeButton;
 
     @FXML
     private ImageView pictureView;
@@ -56,7 +56,11 @@ public class MainScreenController {
     public void encodePicture() throws IOException{
         encoder = new ImageEncoder(decodingModel,outputImage);
         String text= textArea.getText().trim() + "`";
-        encoder.encode(text,fileName);
+        try {
+            encoder.encode(text, fileName);
+        } catch (Exception e) {
+            System.out.println("Invalid character.");
+        }
     }
 
     @FXML
@@ -68,6 +72,7 @@ public class MainScreenController {
 
     @FXML
     public void setImage(ActionEvent e) {
+
         clear();
         FileChooser chooser = new FileChooser();
         File file = chooser.showOpenDialog((Stage)((Node)e.getSource()).getScene().getWindow());
@@ -83,8 +88,9 @@ public class MainScreenController {
             pictureView.setImage(new Image(url));
 
         } catch (Exception E){
-            System.out.println(E.getStackTrace());
+
         }
+
     }
 
     @FXML

@@ -22,7 +22,7 @@ public class ImageEncoder {
         _image=image;
     }
 
-    public void encode(String s,String output) throws IOException{
+    public void encode(String s,String output) throws Exception{
 
         char[] characters = s.toCharArray();
         int value;
