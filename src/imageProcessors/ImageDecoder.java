@@ -18,16 +18,15 @@ public class ImageDecoder {
         _image = image;
     }
 
-    public String decode(){
+    public String decode() {
         int maxWidth = _image.getWidth()-1;
-        int maxHeight = _image.getHeight()-1;
         int height = 0;
         int width = 0;
         String output="";
         int value;
 
         while(height < maxWidth){
-            value = RGB_IO.getIntFromRGB(_image,height,width);
+            value = RGB_IO.getIntFromRGB(_image,width,height);
             String character = _model.getCharacter(value);
 
             if (value == 0){
@@ -36,7 +35,7 @@ public class ImageDecoder {
 
             output = output+character;
 
-            if (width < maxHeight){
+            if (width < maxWidth){
                 width++;
             } else {
                 height = height+1;

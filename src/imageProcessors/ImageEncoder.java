@@ -32,15 +32,16 @@ public class ImageEncoder {
         for (char c: characters){
             String cString = Character.toString(c);
             value = _model.getRGBNumber(cString);
-            RGB_IO.setRGBFromInt(_image,value,x,y);
+            RGB_IO.setRGBFromInt(_image, value, x, y);
 
-            if (y<_image.getWidth()-1){
-                y++;
-            } else {
+            if (x < _image.getWidth() - 1) {
                 x++;
+            } else {
+                y++;
+                x=0;
             }
 
-            if (x > _image.getHeight()-1){
+            if (y >= _image.getHeight() - 1) {
                 System.out.println("Not enough space in image.");
                 break;
             }

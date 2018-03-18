@@ -14,7 +14,7 @@ public abstract class EncryptionModel {
         for (char character = 'a'; character <= 'z'; character++) {
             number = incrementAndPutNumber(number, character);
         }
-        for (char character = 'A'; character <= 'Z'; character++) {
+        for (char character = 'A'; character <= 'Y'; character++) {
             if (character != 'Q') {
                 number = incrementAndPutNumber(number, character);
             }
@@ -24,6 +24,7 @@ public abstract class EncryptionModel {
         }
         number = incrementAndPutNumber(number, ' ');
         number = incrementAndPutNumber(number, '.');
+        incrementAndPutNumber(number,'\n');
         putStopInMap();
 
     }

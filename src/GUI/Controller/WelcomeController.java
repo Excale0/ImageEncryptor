@@ -29,7 +29,7 @@ public class WelcomeController {
     private Label failureLabel;
 
 
-    private static final String PASSWORD = "123";
+    private static final String PASSWORD = "Eroad";
 
     @FXML
     void initialize(){

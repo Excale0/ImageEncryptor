@@ -60,6 +60,7 @@ public class MainScreenController {
             encoder.encode(text, fileName);
         } catch (Exception e) {
             System.out.println("Invalid character.");
+            e.printStackTrace();
         }
     }
 
